@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>wuliu-service-user</project>
-		<project>weilai-service-user</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

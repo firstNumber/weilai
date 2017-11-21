@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.weilai.user.service.UserService;
 
 
+
 @Controller
 @RequestMapping("/user")
 public class UserController {

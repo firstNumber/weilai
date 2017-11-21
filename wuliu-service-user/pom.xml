@@ -7,8 +7,9 @@
 		<groupId>com.weilai</groupId>
 		<artifactId>weilai-wuliu</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>weilai-service-user</artifactId>
+	<artifactId>wuliu-service-user</artifactId>
 	<packaging>jar</packaging>
 	<url>http://maven.apache.org</url>
 	<properties>

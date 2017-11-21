@@ -16,7 +16,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.weilai</groupId>
-			<artifactId>weilai-service-user</artifactId>
+			<artifactId>wuliu-api-user</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
