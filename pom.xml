@@ -244,6 +244,20 @@
 			<version>3.2.1</version>
 		</dependency>
 		
+		<!-- http -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5</version>
+		</dependency>
+		
+		<!-- json -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier><!--这里要指定jdk版本 -->
+		</dependency>
 	</dependencies>
 
 	<build>
