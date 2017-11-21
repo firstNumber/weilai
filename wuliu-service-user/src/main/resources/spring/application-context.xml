@@ -2,17 +2,17 @@
 <beans default-init-method="init" default-destroy-method="destroy"
 	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
   http://www.springframework.org/schema/beans/spring-beans.xsd  
   http://www.springframework.org/schema/context  
   http://www.springframework.org/schema/context/spring-context.xsd  ">
-        
+
+	<!-- 自动扫描 -->
 	<context:component-scan base-package="com.weilai.*" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> 
 	 </context:component-scan>
-        
+	<import resource="classpath:spring/spring-mybatis.xml" />
 	<import resource="classpath:spring/dubbo-provider.xml" />
 
 	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->
@@ -21,7 +21,8 @@
 		<property name="locations">
 			<list>
 				<!-- 这里支持多种寻址方式：classpath和file -->
-				<value>classpath:spring/dubbo.properties</value>
+				<value>classpath:database.properties</value>
+				<value>classpath:dubbo.properties</value>
 			</list>
 		</property>
 	</bean>

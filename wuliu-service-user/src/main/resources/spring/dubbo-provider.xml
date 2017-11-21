@@ -22,7 +22,6 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:provider delay="-1" timeout="10000" retries="0" /><!-- 全局超时,重试机制 -->
 	
-	<dubbo:service interface="com.weilai.user.service.UserService" ref="userService" />
+	<dubbo:service interface="com.weilai.user.account.service.CarboxService" ref="carboxService" />
 	
-	<bean id="userService" class="com.weilai.user.service.impl.UserServiceImpl" />  
 </beans>

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.weilai.user.account.service.CarboxService;
 import com.weilai.user.service.UserService;
 
 
@@ -14,12 +15,12 @@ import com.weilai.user.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
-	UserService userService;
+	CarboxService carboxService;
 	@RequestMapping(value = "queryUser.action", method = RequestMethod.GET)
 	@ResponseBody
 	public String querUser() {
 		System.out.println("啦啦啦啦============================");
-		userService.queryUser();
+		carboxService.queryCar();
 		return "index";
 	}
 }
