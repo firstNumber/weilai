@@ -258,7 +258,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	 * 
 	 * @param param
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2015年7月23日
 	 */
 	protected String checkSqlParam(String param) {
@@ -277,7 +277,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	 *            xml中的sql id, 不需要加namespace和.
 	 * @param parameter
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年9月9日
 	 */
 	protected <E> List<E> selectList(String statement, Object parameter) {
@@ -291,7 +291,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	 *            xml中的sql id, 不需要加namespace和.
 	 * @param parameter
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2016年9月23日
 	 */
 	protected <E> E selectOne(String statement, Object parameter) {
@@ -305,7 +305,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	 *            xml中的sql id, 不需要加namespace和.
 	 * @param parameter
 	 * @return
-	 * @Author: wangxingfei
+	 * @Author: liyongzhen
 	 * @Date: 2017年1月14日
 	 */
 	protected int update(String statement, Object parameter) {

@@ -9,37 +9,7 @@ import com.weilai.common.exception.BusiException;
 public class MapUtil {
 	public static final Integer SUCCESS_CODE = 1;// 默认成功状态码
 	public static final Integer ERROR_CODE = 2; // 默认失败状态码
-	public static final Integer ERROR_CODE_PART = 3; // 数组订单请求时，其中部分有异常的
 
-	public static final Integer ERROR_USER_EXIT = 201; // 用户已存在
-	public static final Integer ERROR_USER_NOT_EXIT = 202; // 用户不存在
-	public static final Integer ERROR_USER_TYPE = 203; // 用户类型不对
-	public static final Integer ERROR_USER_CODE = 204; // 验证码不正确
-	public static final Integer ERROR_USER_NAME_PWD = 205; // 用户或密码错误
-	public static final Integer ERROR_USER_BAN = 206; // 用户已被禁用
-	public static final Integer ERROR_USER_RECOMMEND = 207; // 推荐人编码不存在
-	public static final Integer ERROR_USER_ADMIN = 208; // 管理员信息已存在，不能重复录入
-	public static final Integer ERROR_USER_PWD_LESS = 211; // 密码小于6位
-
-	public static final Integer ERROR_USER_COMP_CONTENT = 221; // 业务内容不存在
-	public static final Integer ERROR_USER_COMP_LEGALPERSONID = 222;// 法人身份证不能重复
-	public static final Integer ERROR_USER_COMP_BUSINESSLICENCE = 223;// 营业执照不能重复
-
-	public static final Integer ERROR_AUDIT_COMP_NOID = 240;// compInfoId不存在
-	public static final Integer ERROR_AUDIT_COMP_REVOKE = 241;// 重复撤销
-	public static final Integer ERROR_AUDIT_COMP = 242;// 审核失败
-	public static final Integer ERROR_AUDIT_NULL = 243;// 返回内容为空
-	public static final Integer ERROR_AUDIT_GRAB = 244;// 未开启抢单模式
-	public static final Integer ERROR_AUDIT_GRAB_NULL = 245;// 抢单：没有符合规则的单子
-	public static final Integer ERROR_AUDIT_USER = 246;// 无审核权限
-
-	public static final Integer ERROR_AUTH = 401; // 权限验证错误
-	public static final Integer ERROR_SYS = 500; // 系统错误
-	public static final Integer ERROR_REPEAT_COMMIT = 600; // 重复提交
-	public static final Integer ERROR_DOUBLE_LOGIN = 998; // 重复登录/互踢
-	public static final Integer ERROR_MUST_LOGIN = 999; // 需要登录
-
-	public static final Integer WARN_ORDER_DELIVERY_TIMEOUT_EXCEPTION = 101; // 订单确认送达超时异常
 	/**
 	 * 返回错误信息(错误码500)
 	 * 

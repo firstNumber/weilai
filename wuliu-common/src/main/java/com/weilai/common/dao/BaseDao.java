@@ -185,7 +185,7 @@ public interface BaseDao<T> {
 	 * 根据ids,查询对象
 	* @param ids
 	* @return
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2015年8月21日
 	 */
 	public List<T> findByIds(String ids);
@@ -193,7 +193,7 @@ public interface BaseDao<T> {
 	/**
 	 * 批量插入
 	* @param list
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2015年8月26日
 	 */
 	public void insertBatch(List<T> list);
@@ -202,7 +202,7 @@ public interface BaseDao<T> {
 	 * 查询总记录数
 	* @param countParam
 	* @return
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2017年3月16日
 	 */
 	int findCountByMap(Map<String, Object> countParam);

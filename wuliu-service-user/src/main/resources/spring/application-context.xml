@@ -22,6 +22,7 @@
 			<list>
 				<!-- 这里支持多种寻址方式：classpath和file -->
 				<value>classpath:database.properties</value>
+				<value>classpath:jedis.properties</value>
 				<value>classpath:dubbo.properties</value>
 			</list>
 		</property>

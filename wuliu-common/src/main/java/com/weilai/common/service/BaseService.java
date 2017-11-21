@@ -184,7 +184,7 @@ public interface BaseService<T>{
 	 * 根据ids,查询对象
 	* @param ids
 	* @return
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2015年8月21日
 	 */
 	public List<T> findByIds(String ids);
@@ -194,7 +194,7 @@ public interface BaseService<T>{
 	* @param cacheEnum
 	* @param value
 	* @return
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2016年5月17日
 	 */
 	public Object get4CacheFactory(CacheEnum cacheEnum,Object value);
@@ -203,7 +203,7 @@ public interface BaseService<T>{
 	 * 查询总记录数
 	* @param countParam
 	* @return
-	* @Author: wangxingfei
+	* @Author: liyongzhen
 	* @Date: 2017年3月16日
 	 */
 	int findCountByMap(Map<String, Object> countParam);

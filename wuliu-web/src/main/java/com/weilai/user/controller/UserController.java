@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.weilai.common.cache.CacheMan;
 import com.weilai.user.account.service.CarboxService;
 import com.weilai.user.service.UserService;
 
@@ -19,8 +20,11 @@ public class UserController {
 	@RequestMapping(value = "queryUser.action", method = RequestMethod.GET)
 	@ResponseBody
 	public String querUser() {
+		String lockKey="catbox.service";
+		CacheMan.postLock(lockKey);
 		System.out.println("啦啦啦啦============================");
 		carboxService.queryCar();
+		
 		return "index";
 	}
 }
