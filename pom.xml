@@ -68,6 +68,7 @@
 		<module>wuliu-service-user</module>
     <module>wuliu-common</module>
     <module>wuliu-common-config</module>
+    <module>wuliu-common-mq</module>
   </modules>
 
 	<dependencies>
@@ -159,6 +160,13 @@
 			<version>${jackson-version}</version>
 		</dependency>
 		<!-- Spring end -->
+		
+		<!-- spring rabbit -->
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+			<version>1.4.5.RELEASE</version>
+		</dependency>
 
 		<!-- apache jar -->
 		<dependency>

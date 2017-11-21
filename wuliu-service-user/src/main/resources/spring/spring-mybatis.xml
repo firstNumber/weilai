@@ -96,7 +96,7 @@
 <!-- 	<bean id="serviceEx" class="com.weilai.common.exception.ServiceExceptionHandler" />   -->
 <!-- 	<aop:config> -->
 <!-- 		<aop:aspect id="exServiceAop" ref="serviceEx">   -->
-<!--             <aop:pointcut id="exParam" expression="execution(* com.zhidian.*.service.*Service.*(..)) or execution (* com.zhidian.*.*.service.*Service.*(..))" />   -->
+<!--             <aop:pointcut id="exParam" expression="execution(* com.weilai.*.service.*Service.*(..)) or execution (* com.zhidian.*.*.service.*Service.*(..))" />   -->
 <!--             <aop:after-throwing pointcut-ref="exParam" method="doThrowing" throwing="ex" />   -->
 <!--         </aop:aspect>  -->
 <!-- 	</aop:config>	 -->

@@ -13,6 +13,9 @@
         <dependent-module archiveName="wuliu-common-config-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wuliu-common-config/wuliu-common-config">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="wuliu-common-mq-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/wuliu-common-mq/wuliu-common-mq">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/wuliu-web/target/classes"/>
         <property name="context-root" value="wuliu-app"/>
     </wb-module>

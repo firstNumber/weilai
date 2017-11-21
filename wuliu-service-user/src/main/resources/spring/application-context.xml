@@ -12,8 +12,13 @@
 	<context:component-scan base-package="com.weilai.*" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/> 
 	 </context:component-scan>
+	 
+	 <!-- 获取spring上下文 的util类 -->
+	<bean id="springContextUtil" class="com.weilai.common.util.SpringContextUtil" />
+	
 	<import resource="classpath:spring/spring-mybatis.xml" />
 	<import resource="classpath:spring/dubbo-provider.xml" />
+	<import resource="classpath:spring/spring-rabbit.xml" />
 
 	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->
 	<bean id="propertyConfigurer"
@@ -24,6 +29,7 @@
 				<value>classpath:database.properties</value>
 				<value>classpath:jedis.properties</value>
 				<value>classpath:dubbo.properties</value>
+				<value>classpath:rabbitmq.properties</value>
 			</list>
 		</property>
 	</bean>
