@@ -69,9 +69,18 @@
     <module>wuliu-common</module>
     <module>wuliu-common-config</module>
     <module>wuliu-common-mq</module>
+    <module>wuliu-service-task</module>
+    <module>wuliu-api-task</module>
   </modules>
 
 	<dependencies>
+	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -258,6 +267,26 @@
 			<version>2.4</version>
 			<classifier>jdk15</classifier><!--这里要指定jdk版本 -->
 		</dependency>
+		
+		<!-- quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<!-- xml -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.6</version>
+		</dependency>
+		<!-- xml end -->
 	</dependencies>
 
 	<build>
