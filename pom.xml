@@ -71,6 +71,8 @@
     <module>wuliu-common-mq</module>
     <module>wuliu-service-task</module>
     <module>wuliu-api-task</module>
+    <module>wuliu-service-student</module>
+    <module>wuliu-api-student</module>
   </modules>
 
 	<dependencies>

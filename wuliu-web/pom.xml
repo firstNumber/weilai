@@ -19,6 +19,11 @@
 			<artifactId>wuliu-api-user</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.weilai</groupId>
+			<artifactId>wuliu-api-student</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

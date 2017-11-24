@@ -9,7 +9,8 @@ package com.weilai.mq.util;
  **********************************
  */
 public enum RabbitQueue {
-	LIGE_RABBITMQ(false);
+	LIGE_RABBITMQ(false) ,
+	USER_STUDENT(false);
 
 	private boolean sendEmail;// 异常时是否发送邮件
 

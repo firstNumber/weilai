@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.weilai.common.cache.CacheMan;
-import com.weilai.mq.rabbit.send.Rabbit;
-import com.weilai.mq.util.RabbitQueue;
 import com.weilai.user.account.service.CarboxService;
 
 
@@ -23,7 +21,6 @@ public class UserController {
 	public String querUser() {
 		String lockKey="catbox.service";
 		CacheMan.postLock(lockKey);
-		System.out.println("啦啦啦啦============================");
 		carboxService.queryCar();
 		CacheMan.unLock(lockKey);
 		return "index";
