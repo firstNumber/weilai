@@ -193,7 +193,7 @@ public class ReadExcelExpressTest {
 	    ReadExcelExpressTest t=new ReadExcelExpressTest();
 	    String sql="INSERT into driver_rule(`vehicleType`,`discription`,`length`,`width`,`height`,`maxWeight`,`maxVolume`,`initPrice`,`price`,`initKm`,`province`) VALUES ";
     	try {
-			List list=t.readExcel("D:\\lyz02.xlsx");
+			List list=t.readExcel("D:\\lyz.xlsx");
 			for(int i=0;i<list.size();i++){
 				Map m=(Map) list.get(i);
 				sql+="('"+(m.get("0")==null?"":m.get("0"))+"',"

@@ -6,6 +6,7 @@ public class StaClass {
 	public static void main(String[] args) {
 		 a b = new a();
 		 b.a();
+		 
 	}
 }
 
