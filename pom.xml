@@ -62,9 +62,7 @@
 	</properties>
 	<modules>
 		<module>wuliu-web</module>
-		
 		<module>wuliu-api-user</module>
-		
 		<module>wuliu-service-user</module>
     <module>wuliu-common</module>
     <module>wuliu-common-config</module>
@@ -73,6 +71,7 @@
     <module>wuliu-api-task</module>
     <module>wuliu-service-student</module>
     <module>wuliu-api-student</module>
+    
   </modules>
 
 	<dependencies>

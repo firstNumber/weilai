@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,8 +17,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
 
-public class ReadExcelExpressTest {
-
+public class ReadExceShortTypeTest {
 	private static final String EXTENSION_XLS = "xls";
 	private static final String EXTENSION_XLSX = "xlsx";
 
@@ -191,9 +189,9 @@ public class ReadExcelExpressTest {
 	public static void main(String[] args) {
 		DBHelper db1 = new DBHelper();
 		ReadExcelExpressTest t = new ReadExcelExpressTest();
-		String sql = "INSERT into driver_rule(`vehicleType`,`discription`,`length`,`width`,`height`,`maxWeight`,`maxVolume`,`initPrice`,`price`,`initKm`,`province`) VALUES ";
+		String sql = "INSERT into short_type(`vehicleType`,`discription`,`length`,`width`,`heigth`,`maxWeight`,`maxVolume`) VALUES ";
 		try {
-			List list = t.readExcel("D:\\lyz.xlsx");
+			List list = t.readExcel("D:\\lyz02.xlsx");
 			for (int i = 0; i < list.size(); i++) {
 				Map m = (Map) list.get(i);
 				sql += "('" + (m.get("0") == null ? "" : m.get("0")) + "'," + "'"
@@ -201,11 +199,8 @@ public class ReadExcelExpressTest {
 						+ (m.get("2") == null ? "" : m.get("2") + "*10") + "," + ""
 						+ (m.get("3") == null ? "" : m.get("3") + "*10") + "," + ""
 						+ (m.get("4") == null ? "" : m.get("4") + "*10") + "," + ""
-						+ (m.get("6") == null ? "" : m.get("6") + "/1000") + "," + ""
-						+ (m.get("5") == null ? "" : m.get("5")) + "," + "" + (m.get("7") == null ? "" : m.get("7"))
-						+ "," + "" + (m.get("8") == null ? "" : m.get("8")) + "," + ""
-						+ (m.get("9") == null ? "" : m.get("9")) + "," + "'" + (m.get("10") == null ? "" : m.get("10"))
-						+ "'" + ")";
+						+ (m.get("6") == null ? "" : m.get("6")) + "," + "" + (m.get("5") == null ? "" : m.get("5"))
+						+ ")";
 				if (i != list.size() - 1) {
 					sql += ",";
 				}

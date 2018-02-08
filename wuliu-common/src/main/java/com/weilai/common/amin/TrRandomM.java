@@ -1,9 +1,16 @@
 package com.weilai.common.amin;
-import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.locks.ReentrantLock;
 public class TrRandomM {
 	public static void main(String[] args) {
-		Random  random = new Random();
-		int a  = random.nextInt(10);
-		System.out.println(a);
+		ThreadLocalRandom.current();
+		System.out.println(System.currentTimeMillis());
+		ExecutorService excutor = Executors.newCachedThreadPool();
+		
+		Thread.holdsLock(TrRandomM.class);
+		
+		ReentrantLock a = new ReentrantLock();
 	}
 }
