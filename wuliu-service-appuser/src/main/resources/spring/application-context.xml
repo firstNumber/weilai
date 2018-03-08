@@ -17,7 +17,7 @@
 	<bean id="springContextUtil" class="com.weilai.common.util.SpringContextUtil" />
 	
 	<import resource="classpath:spring/spring-mybatis.xml" />
-	<import resource="classpath:spring/dubbo-provider.xml" />
+<!-- 	<import resource="classpath:spring/dubbo-provider.xml" /> -->
 	<import resource="classpath:spring/spring-rabbit.xml" />
 
 	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->
