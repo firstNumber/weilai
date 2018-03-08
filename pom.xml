@@ -61,9 +61,9 @@
 		<tomcat-version>7.0.56</tomcat-version>		<!-- tomcat -->
 	</properties>
 	<modules>
-		<module>wuliu-web</module>
-		<module>wuliu-api-user</module>
-		<module>wuliu-service-user</module>
+	<module>wuliu-web</module>
+	<module>wuliu-api-user</module>
+	<module>wuliu-service-user</module>
     <module>wuliu-common</module>
     <module>wuliu-common-config</module>
     <module>wuliu-common-mq</module>
@@ -71,8 +71,9 @@
     <module>wuliu-api-task</module>
     <module>wuliu-service-student</module>
     <module>wuliu-api-student</module>
-    
-  </modules>
+    <module>wuliu-api-appuser</module>
+    <module>wuliu-service-appuser</module>
+	</modules>
 
 	<dependencies>
 	<dependency>
