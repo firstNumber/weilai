@@ -10,6 +10,7 @@ import com.weilai.appuser.core.model.AppUser;
 import com.weilai.appuser.core.service.AppUserService;
 import com.weilai.common.dao.BaseDao;
 import com.weilai.common.service.impl.BaseServiceImpl;
+import com.weilai.common.util.LockUtil;
 
 @Service("appUserService")
 public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppUserService {
@@ -52,5 +53,11 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 		} catch (Exception e) {
 			throw e;
 		}
+	}
+
+	private void redislock() {
+		LockUtil.lock("yongzhen", LockUtil.getCacheValue(), 5);
+		LockUtil.tryLock("yongzhen", LockUtil.getCacheValue(), 1000, 1000);
+		LockUtil.unlock("yongzhen", LockUtil.getCacheValue());
 	}
 }
