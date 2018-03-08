@@ -25,7 +25,7 @@ public class ScaffoldGenerator {
 
 	// public static String moduleName = "order";
 	// public static String moduleName = "zhongbao";
-	public static String moduleName = "cabox";
+	public static String moduleName = "appuser";
 	// public static String moduleName = "user";
 	public static Map<String, String> pathMap = new HashMap<String, String>() {
 		{
@@ -45,7 +45,7 @@ public class ScaffoldGenerator {
 		// arg3 表名
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriver","order_driver");
-		ScaffoldGen generator = new ScaffoldGen("cabox.core", "Carbox", "carbox");
+		ScaffoldGen generator = new ScaffoldGen("appuser.core", "AppUser", "app_user");
 
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriverPackage","order_driver_package");
