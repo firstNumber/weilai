@@ -395,7 +395,7 @@ public class JedisUtil {
 			jedis = getJedis();
 			jedis.watch(fullKey);
 			String existValue = jedis.get(fullKey);
-			existValue = JedisSerializeJsonUtil.unserialize(value, String.class);
+			existValue = JedisSerializeJsonUtil.unserialize(existValue, String.class);
 			if (Objects.equals(value, existValue)) {
 				jedis.del(fullKey);
 				result = true;

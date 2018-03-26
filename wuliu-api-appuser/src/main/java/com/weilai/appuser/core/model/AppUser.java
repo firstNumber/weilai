@@ -50,4 +50,10 @@ public class AppUser implements Serializable {
 		this.token = token;
 	}
 
+	@Override
+	public String toString() {
+		return "AppUser [id=" + id + ", userId=" + userId + ", phone=" + phone + ", nickName=" + nickName + ", token="
+				+ token + "]";
+	}
+
 }

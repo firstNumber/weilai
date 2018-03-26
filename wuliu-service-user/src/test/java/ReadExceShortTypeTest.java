@@ -188,7 +188,7 @@ public class ReadExceShortTypeTest {
 
 	public static void main(String[] args) {
 		DBHelper db1 = new DBHelper();
-		ReadExcelExpressTest t = new ReadExcelExpressTest();
+		ReadExcelExpressTest2 t = new ReadExcelExpressTest2();
 		String sql = "INSERT into short_type(`vehicleType`,`discription`,`length`,`width`,`heigth`,`maxWeight`,`maxVolume`) VALUES ";
 		try {
 			List list = t.readExcel("D:\\lyz02.xlsx");

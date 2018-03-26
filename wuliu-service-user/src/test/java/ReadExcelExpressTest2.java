@@ -18,7 +18,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.impl.piccolo.io.FileFormatException;
 
-public class ReadExcelExpressTest {
+public class ReadExcelExpressTest2 {
 
 	private static final String EXTENSION_XLS = "xls";
 	private static final String EXTENSION_XLSX = "xlsx";
@@ -190,7 +190,7 @@ public class ReadExcelExpressTest {
 
 	public static void main(String[] args) {
 		DBHelper db1 = new DBHelper();
-		ReadExcelExpressTest t = new ReadExcelExpressTest();
+		ReadExcelExpressTest2 t = new ReadExcelExpressTest2();
 		String sql = "INSERT into driver_rule(`vehicleType`,`discription`,`length`,`width`,`height`,`maxWeight`,`maxVolume`,`initPrice`,`price`,`initKm`,`province`) VALUES ";
 		try {
 			List list = t.readExcel("D:\\lyz.xlsx");
