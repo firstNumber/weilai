@@ -9,4 +9,6 @@ public interface AppUserService extends BaseService<AppUser> {
 	public void updateAppUserName();
 
 	public List<AppUser> findAllUser();
+
+	public void shishiTry();
 }

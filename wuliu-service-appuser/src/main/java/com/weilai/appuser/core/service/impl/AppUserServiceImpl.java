@@ -1,5 +1,6 @@
 package com.weilai.appuser.core.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import com.weilai.appuser.core.dao.AppUserDao;
 import com.weilai.appuser.core.model.AppUser;
 import com.weilai.appuser.core.service.AppUserService;
 import com.weilai.common.dao.BaseDao;
+import com.weilai.common.exception.BusiException;
 import com.weilai.common.service.impl.BaseServiceImpl;
 import com.weilai.common.util.LockUtil;
 import com.weilai.common.util.ThreadUtil;
@@ -38,6 +40,7 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 		}
 	}
 
+	@SuppressWarnings("finally")
 	private void update2(List<AppUser> userList, Integer num) {
 		String phone = getBatchNum();
 		boolean flag = false;
@@ -51,7 +54,8 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 			if (num == 1) {
 				userList.get(2).setNickName("唐嫣");
 				update(userList.get(2));
-				userList.get(3).setNickName("景甜是个大美女,每个人都喜欢");
+				// userList.get(3).setNickName("景甜是个大美女,每个人都喜欢");
+				userList.get(3).setNickName("景甜");
 				update(userList.get(3));
 			}
 
@@ -65,16 +69,18 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 				a.setNickName("范冰冰");
 				a.setPhone(phone);
 				a.setToken("21321321321321321");
-				create(a);
+				// create(a);
 				ThreadUtil.execute(new Runnable() {
 					@Override
 					public void run() {
-						create(a);
+						// throw new BusiException("线程");
+						// create(a);
 					}
 				});
 			}
+			throw new BusiException("线程");
 		}
-		System.out.println("我照样走.");
+		// System.out.println("我照样走.");
 
 	}
 
@@ -92,5 +98,27 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 	@Override
 	public List<AppUser> findAllUser() {
 		return findBy("userId", 20);
+	}
+
+	@Override
+	public void shishiTry() {
+		List<String> a = new ArrayList<>();
+		try {
+			a.get(0);
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			System.out.println("************************");
+		}
+
+		System.out.println("==============================");
+		try {
+			System.out.println("888");
+		} catch (Exception e) {
+
+		} finally {
+			System.out.println("999");
+		}
+
 	}
 }

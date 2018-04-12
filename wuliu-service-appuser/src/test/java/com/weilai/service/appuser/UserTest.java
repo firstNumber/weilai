@@ -37,4 +37,9 @@ public class UserTest {
 			System.out.println(appUser);
 		}
 	}
+
+	@Test
+	public void test() {
+		appUserService.shishiTry();
+	}
 }
