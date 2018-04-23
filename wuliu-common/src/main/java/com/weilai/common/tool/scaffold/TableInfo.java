@@ -188,6 +188,14 @@ public class TableInfo {
 			}
 			sb.append("</if>");
 			sb.append(ENDL);
+
+			if (col.getName().equals("status") && col.parseJdbcType().equals("NUMERIC")) {
+				sb.append(TAB3);
+				sb.append("<if test= \"" + col.parseFieldName() + "In != null \">");
+				sb.append("	and " + col.getName() + " in (${" + col.parseFieldName() + "In})");
+				sb.append("</if>");
+				sb.append(ENDL);
+			}
 		}
 		return sb.toString();
 	}

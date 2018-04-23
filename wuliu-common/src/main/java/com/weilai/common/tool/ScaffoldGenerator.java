@@ -29,13 +29,16 @@ public class ScaffoldGenerator {
 	// public static String moduleName = "user";
 	public static Map<String, String> pathMap = new HashMap<String, String>() {
 		{
-			put("Model.txt", ROOT_PATH + "wuliu-api-" + moduleName + "/");
+			// put("Model.txt", ROOT_PATH + "wuliu-api-" + moduleName + "/");
 			put("SqlMap.txt", ROOT_PATH + "wuliu-service-" + moduleName + "/");
-			put("Dao.txt", ROOT_PATH + "wuliu-service-" + moduleName + "/");
-			put("DaoImpl.txt", ROOT_PATH + "wuliu-service-" + moduleName + "/");
-			put("Service.txt", ROOT_PATH + "wuliu-api-" + moduleName + "/");
-			put("ServiceImpl.txt", ROOT_PATH + "wuliu-service-" + moduleName + "/");
-			put("Controller.txt", ROOT_PATH + "wuliu-web-" + "moduleName" + "/");
+			// put("Dao.txt", ROOT_PATH + "wuliu-service-" + moduleName + "/");
+			// put("DaoImpl.txt", ROOT_PATH + "wuliu-service-" + moduleName +
+			// "/");
+			// put("Service.txt", ROOT_PATH + "wuliu-api-" + moduleName + "/");
+			// put("ServiceImpl.txt", ROOT_PATH + "wuliu-service-" + moduleName
+			// + "/");
+			// put("Controller.txt", ROOT_PATH + "wuliu-web-" + "moduleName" +
+			// "/");
 		}
 	};
 
@@ -45,7 +48,7 @@ public class ScaffoldGenerator {
 		// arg3 表名
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriver","order_driver");
-		ScaffoldGen generator = new ScaffoldGen("appuser.core", "AppUser", "app_user");
+		ScaffoldGen generator = new ScaffoldGen("appuser.core", "orderShort", "order_short");
 
 		// ScaffoldGen generator = new ScaffoldGen("zhongbao.driver",
 		// "OrderDriverPackage","order_driver_package");
