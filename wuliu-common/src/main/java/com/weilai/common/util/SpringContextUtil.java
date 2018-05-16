@@ -12,8 +12,9 @@ import org.springframework.context.ApplicationContextAware;
 public class SpringContextUtil implements ApplicationContextAware {
 
 	// Spring应用上下文环境
-//	private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml"); ;
-	private static ApplicationContext applicationContext  ;
+	// private static ApplicationContext applicationContext = new
+	// ClassPathXmlApplicationContext("application-context.xml"); ;
+	private static ApplicationContext applicationContext;
 
 	/**
 	 * 实现ApplicationContextAware接口的回调方法，设置上下文环境
@@ -42,4 +43,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 		return applicationContext.getBean(name);
 	}
 
+	public static <T> T getBean(Class<T> requiredType) {
+		return applicationContext.getBean(requiredType);
+	}
 }
