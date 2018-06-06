@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.weilai.appuser.core.model.OrderShortPackage">
+
+	<resultMap id="result" type="com.weilai.appuser.core.model.OrderShortPackage">
+            <id property="id" column="id" jdbcType="INTEGER" />
+            <result property="batchNum" column="batchNum" jdbcType="VARCHAR" />
+            <result property="packageNum" column="packageNum" jdbcType="VARCHAR" />
+            <result property="packageStatus" column="packageStatus" jdbcType="NUMERIC" />
+            <result property="reverseStatus" column="reverseStatus" jdbcType="NUMERIC" />
+            <result property="goodsStatus" column="goodsStatus" jdbcType="NUMERIC" />
+            <result property="driverId" column="driverId" jdbcType="NUMERIC" />
+            <result property="driverName" column="driverName" jdbcType="VARCHAR" />
+            <result property="driverPhone" column="driverPhone" jdbcType="VARCHAR" />
+            <result property="totalWeight" column="totalWeight" jdbcType="NUMERIC" />
+            <result property="totalVolume" column="totalVolume" jdbcType="NUMERIC" />
+            <result property="goodsLength" column="goodsLength" jdbcType="NUMERIC" />
+            <result property="goodsWidth" column="goodsWidth" jdbcType="NUMERIC" />
+            <result property="goodsHeight" column="goodsHeight" jdbcType="NUMERIC" />
+            <result property="takingTime" column="takingTime" />
+            <result property="goodsTime" column="goodsTime" />
+            <result property="overTime" column="overTime" />
+            <result property="createTime" column="createTime" />
+            <result property="updateTime" column="updateTime" />
+
+	</resultMap>
+
+	<sql id="base_field">
+		id,batchNum,packageNum,packageStatus,reverseStatus,goodsStatus,driverId,driverName,driverPhone,totalWeight,totalVolume,goodsLength,goodsWidth,goodsHeight,takingTime,goodsTime,overTime,createTime,updateTime
+	</sql>
+	
+	<sql id="other-condition">
+            <if test= "batchNum != null ">	and batchNum = #{batchNum,jdbcType=VARCHAR }</if>
+            <if test= "packageNum != null ">	and packageNum = #{packageNum,jdbcType=VARCHAR }</if>
+            <if test= "packageStatus != null ">	and packageStatus = #{packageStatus,jdbcType=NUMERIC }</if>
+            <if test= "reverseStatus != null ">	and reverseStatus = #{reverseStatus,jdbcType=NUMERIC }</if>
+            <if test= "goodsStatus != null ">	and goodsStatus = #{goodsStatus,jdbcType=NUMERIC }</if>
+            <if test= "driverId != null ">	and driverId = #{driverId,jdbcType=NUMERIC }</if>
+            <if test= "driverName != null ">	and driverName = #{driverName,jdbcType=VARCHAR }</if>
+            <if test= "driverPhone != null ">	and driverPhone = #{driverPhone,jdbcType=VARCHAR }</if>
+            <if test= "totalWeight != null ">	and totalWeight = #{totalWeight,jdbcType=NUMERIC }</if>
+            <if test= "totalVolume != null ">	and totalVolume = #{totalVolume,jdbcType=NUMERIC }</if>
+            <if test= "goodsLength != null ">	and goodsLength = #{goodsLength,jdbcType=NUMERIC }</if>
+            <if test= "goodsWidth != null ">	and goodsWidth = #{goodsWidth,jdbcType=NUMERIC }</if>
+            <if test= "goodsHeight != null ">	and goodsHeight = #{goodsHeight,jdbcType=NUMERIC }</if>
+            <if test= "takingTime != null ">	and takingTime = #{takingTime }</if>
+            <if test= "goodsTime != null ">	and goodsTime = #{goodsTime }</if>
+            <if test= "overTime != null ">	and overTime = #{overTime }</if>
+            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "updateTime != null ">	and updateTime = #{updateTime }</if>
+
+ 	</sql>
+ 	
+ 	<sql id="like-condition">
+            <if test= "batchNum != null ">	and batchNum like "%"#{batchNum}"%"</if>
+            <if test= "packageNum != null ">	and packageNum like "%"#{packageNum}"%"</if>
+            <if test= "packageStatus != null ">	and packageStatus = #{packageStatus,jdbcType=NUMERIC }</if>
+            <if test= "reverseStatus != null ">	and reverseStatus = #{reverseStatus,jdbcType=NUMERIC }</if>
+            <if test= "goodsStatus != null ">	and goodsStatus = #{goodsStatus,jdbcType=NUMERIC }</if>
+            <if test= "driverId != null ">	and driverId = #{driverId,jdbcType=NUMERIC }</if>
+            <if test= "driverName != null ">	and driverName like "%"#{driverName}"%"</if>
+            <if test= "driverPhone != null ">	and driverPhone like "%"#{driverPhone}"%"</if>
+            <if test= "totalWeight != null ">	and totalWeight = #{totalWeight,jdbcType=NUMERIC }</if>
+            <if test= "totalVolume != null ">	and totalVolume = #{totalVolume,jdbcType=NUMERIC }</if>
+            <if test= "goodsLength != null ">	and goodsLength = #{goodsLength,jdbcType=NUMERIC }</if>
+            <if test= "goodsWidth != null ">	and goodsWidth = #{goodsWidth,jdbcType=NUMERIC }</if>
+            <if test= "goodsHeight != null ">	and goodsHeight = #{goodsHeight,jdbcType=NUMERIC }</if>
+            <if test= "takingTime != null ">	and takingTime = #{takingTime }</if>
+            <if test= "goodsTime != null ">	and goodsTime = #{goodsTime }</if>
+            <if test= "overTime != null ">	and overTime = #{overTime }</if>
+            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "updateTime != null ">	and updateTime = #{updateTime }</if>
+
+ 	</sql>
+	
+	<sql id="selectByMapSQL">
+		select
+		<include refid="base_field" />
+		from order_short_package
+		<choose>
+		    <when test="findBy != null">
+		      	<where>
+					<include refid="other-condition" />
+				</where>
+		    </when>
+		    <when test="findByLike != null">
+		      	<where>
+					<include refid="like-condition" />
+				</where>
+		    </when>
+		</choose>
+		<if test="sortName != null">
+			order by ${sortName} ${sortBy}
+		</if>
+	</sql>
+	
+	<select id="selectByMap" resultMap="result" >
+		<include refid="selectByMapSQL" />
+	</select>
+	
+	<select id="selectCount" resultType="int" >
+		select count(*) from (
+			<include refid="selectByMapSQL" />
+		) AABBCC_
+	</select>
+	
+	<select id="selectPage" resultMap="result" >
+		<include refid="selectByMapSQL" />
+		 limit #{startRow},#{pageSize}
+	</select>
+	
+	<select id="select" resultMap="result" parameterType="java.lang.Integer">
+		select
+		<include refid="base_field" />
+		from order_short_package  
+		<where>
+			<if test="_parameter != null">
+				id = #{id,jdbcType=INTEGER}
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectByIds" resultMap="result" >
+		select
+		<include refid="base_field" />
+		from order_short_package  where id in (${_parameter})
+	</select>		
+
+	<insert id="insert" parameterType="com.weilai.appuser.core.model.OrderShortPackage" useGeneratedKeys="true" keyProperty="id">
+		insert into order_short_package( id,batchNum,packageNum,packageStatus,reverseStatus,goodsStatus,driverId,driverName,driverPhone,totalWeight,totalVolume,goodsLength,goodsWidth,goodsHeight,takingTime,goodsTime,overTime,createTime,updateTime ) values (#{id,jdbcType=INTEGER},#{batchNum,jdbcType=VARCHAR},#{packageNum,jdbcType=VARCHAR},#{packageStatus,jdbcType=NUMERIC},#{reverseStatus,jdbcType=NUMERIC},#{goodsStatus,jdbcType=NUMERIC},#{driverId,jdbcType=NUMERIC},#{driverName,jdbcType=VARCHAR},#{driverPhone,jdbcType=VARCHAR},#{totalWeight,jdbcType=NUMERIC},#{totalVolume,jdbcType=NUMERIC},#{goodsLength,jdbcType=NUMERIC},#{goodsWidth,jdbcType=NUMERIC},#{goodsHeight,jdbcType=NUMERIC},#{takingTime},#{goodsTime},#{overTime},#{createTime},#{updateTime} )
+	</insert>
+
+	<update id="update" parameterType="com.weilai.appuser.core.model.OrderShortPackage">
+		update order_short_package set batchNum=#{batchNum,jdbcType=VARCHAR},packageNum=#{packageNum,jdbcType=VARCHAR},packageStatus=#{packageStatus,jdbcType=NUMERIC},reverseStatus=#{reverseStatus,jdbcType=NUMERIC},goodsStatus=#{goodsStatus,jdbcType=NUMERIC},driverId=#{driverId,jdbcType=NUMERIC},driverName=#{driverName,jdbcType=VARCHAR},driverPhone=#{driverPhone,jdbcType=VARCHAR},totalWeight=#{totalWeight,jdbcType=NUMERIC},totalVolume=#{totalVolume,jdbcType=NUMERIC},goodsLength=#{goodsLength,jdbcType=NUMERIC},goodsWidth=#{goodsWidth,jdbcType=NUMERIC},goodsHeight=#{goodsHeight,jdbcType=NUMERIC},takingTime=#{takingTime},goodsTime=#{goodsTime},overTime=#{overTime},updateTime=#{updateTime} where id=#{id,jdbcType=INTEGER}
+	</update>	
+	
+	<update id="update4Selective" parameterType="com.weilai.appuser.core.model.OrderShortPackage">
+		update order_short_package
+        <set>
+            <if test="batchNum != null "> 
+                batchNum = #{batchNum,jdbcType=VARCHAR},
+            </if>
+            <if test="packageNum != null "> 
+                packageNum = #{packageNum,jdbcType=VARCHAR},
+            </if>
+            <if test="packageStatus != null "> 
+                packageStatus = #{packageStatus,jdbcType=NUMERIC},
+            </if>
+            <if test="reverseStatus != null "> 
+                reverseStatus = #{reverseStatus,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsStatus != null "> 
+                goodsStatus = #{goodsStatus,jdbcType=NUMERIC},
+            </if>
+            <if test="driverId != null "> 
+                driverId = #{driverId,jdbcType=NUMERIC},
+            </if>
+            <if test="driverName != null "> 
+                driverName = #{driverName,jdbcType=VARCHAR},
+            </if>
+            <if test="driverPhone != null "> 
+                driverPhone = #{driverPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="totalWeight != null "> 
+                totalWeight = #{totalWeight,jdbcType=NUMERIC},
+            </if>
+            <if test="totalVolume != null "> 
+                totalVolume = #{totalVolume,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsLength != null "> 
+                goodsLength = #{goodsLength,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsWidth != null "> 
+                goodsWidth = #{goodsWidth,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsHeight != null "> 
+                goodsHeight = #{goodsHeight,jdbcType=NUMERIC},
+            </if>
+            <if test="takingTime != null "> 
+                takingTime = #{takingTime},
+            </if>
+            <if test="goodsTime != null "> 
+                goodsTime = #{goodsTime},
+            </if>
+            <if test="overTime != null "> 
+                overTime = #{overTime},
+            </if>
+            <if test="updateTime != null "> 
+                updateTime = #{updateTime},
+            </if>
+        </set>
+         where id=#{id,jdbcType=INTEGER}
+	</update>	
+
+	<delete id="deleteByPrimaryKey">
+		delete from order_short_package where id = #{id,jdbcType=INTEGER}
+	</delete>	
+
+	<delete id="delete" parameterType="com.weilai.appuser.core.model.OrderShortPackage">
+		delete from order_short_package
+		<where>
+			<if test="id != null">
+				id = #{id,jdbcType=INTEGER}
+			</if>
+			<include refid="other-condition" />
+		</where>
+	</delete>	
+		
+</mapper>
+

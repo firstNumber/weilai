@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.weilai.appuser.core.model.OrderShortBatch">
+
+	<resultMap id="result" type="com.weilai.appuser.core.model.OrderShortBatch">
+            <id property="id" column="id" jdbcType="INTEGER" />
+            <result property="batchNum" column="batchNum" jdbcType="VARCHAR" />
+            <result property="batchStatus" column="batchStatus" jdbcType="NUMERIC" />
+            <result property="reverseStatus" column="reverseStatus" jdbcType="NUMERIC" />
+            <result property="positiveBatchNum" column="positiveBatchNum" jdbcType="VARCHAR" />
+            <result property="orderType" column="orderType" jdbcType="NUMERIC" />
+            <result property="driverId" column="driverId" jdbcType="NUMERIC" />
+            <result property="driverName" column="driverName" jdbcType="VARCHAR" />
+            <result property="driverPhone" column="driverPhone" jdbcType="VARCHAR" />
+            <result property="agentNo" column="agentNo" jdbcType="VARCHAR" />
+            <result property="shipperCode" column="shipperCode" jdbcType="VARCHAR" />
+            <result property="province" column="province" jdbcType="VARCHAR" />
+            <result property="totalVolume" column="totalVolume" jdbcType="NUMERIC" />
+            <result property="goodsLength" column="goodsLength" jdbcType="NUMERIC" />
+            <result property="goodsWidth" column="goodsWidth" jdbcType="NUMERIC" />
+            <result property="goodsHeight" column="goodsHeight" jdbcType="NUMERIC" />
+            <result property="totalWeight" column="totalWeight" jdbcType="NUMERIC" />
+            <result property="totalDist" column="totalDist" jdbcType="NUMERIC" />
+            <result property="totalBasicsPrice" column="totalBasicsPrice" jdbcType="NUMERIC" />
+            <result property="totalNodePrice" column="totalNodePrice" jdbcType="NUMERIC" />
+            <result property="actualPrice" column="actualPrice" jdbcType="NUMERIC" />
+            <result property="cargoPrice" column="cargoPrice" jdbcType="NUMERIC" />
+            <result property="finalPrice" column="finalPrice" jdbcType="NUMERIC" />
+            <result property="costTime" column="costTime" />
+            <result property="orderTakingTime" column="orderTakingTime" />
+            <result property="overTime" column="overTime" />
+            <result property="createTime" column="createTime" />
+            <result property="updateTime" column="updateTime" />
+            <result property="robPoolTime" column="robPoolTime" />
+
+	</resultMap>
+
+	<sql id="base_field">
+		id,batchNum,batchStatus,reverseStatus,positiveBatchNum,orderType,driverId,driverName,driverPhone,agentNo,shipperCode,province,totalVolume,goodsLength,goodsWidth,goodsHeight,totalWeight,totalDist,totalBasicsPrice,totalNodePrice,actualPrice,cargoPrice,finalPrice,costTime,orderTakingTime,overTime,createTime,updateTime,robPoolTime
+	</sql>
+	
+	<sql id="other-condition">
+            <if test= "batchNum != null ">	and batchNum = #{batchNum,jdbcType=VARCHAR }</if>
+            <if test= "batchStatus != null ">	and batchStatus = #{batchStatus,jdbcType=NUMERIC }</if>
+            <if test= "reverseStatus != null ">	and reverseStatus = #{reverseStatus,jdbcType=NUMERIC }</if>
+            <if test= "positiveBatchNum != null ">	and positiveBatchNum = #{positiveBatchNum,jdbcType=VARCHAR }</if>
+            <if test= "orderType != null ">	and orderType = #{orderType,jdbcType=NUMERIC }</if>
+            <if test= "driverId != null ">	and driverId = #{driverId,jdbcType=NUMERIC }</if>
+            <if test= "driverName != null ">	and driverName = #{driverName,jdbcType=VARCHAR }</if>
+            <if test= "driverPhone != null ">	and driverPhone = #{driverPhone,jdbcType=VARCHAR }</if>
+            <if test= "agentNo != null ">	and agentNo = #{agentNo,jdbcType=VARCHAR }</if>
+            <if test= "shipperCode != null ">	and shipperCode = #{shipperCode,jdbcType=VARCHAR }</if>
+            <if test= "province != null ">	and province = #{province,jdbcType=VARCHAR }</if>
+            <if test= "totalVolume != null ">	and totalVolume = #{totalVolume,jdbcType=NUMERIC }</if>
+            <if test= "goodsLength != null ">	and goodsLength = #{goodsLength,jdbcType=NUMERIC }</if>
+            <if test= "goodsWidth != null ">	and goodsWidth = #{goodsWidth,jdbcType=NUMERIC }</if>
+            <if test= "goodsHeight != null ">	and goodsHeight = #{goodsHeight,jdbcType=NUMERIC }</if>
+            <if test= "totalWeight != null ">	and totalWeight = #{totalWeight,jdbcType=NUMERIC }</if>
+            <if test= "totalDist != null ">	and totalDist = #{totalDist,jdbcType=NUMERIC }</if>
+            <if test= "totalBasicsPrice != null ">	and totalBasicsPrice = #{totalBasicsPrice,jdbcType=NUMERIC }</if>
+            <if test= "totalNodePrice != null ">	and totalNodePrice = #{totalNodePrice,jdbcType=NUMERIC }</if>
+            <if test= "actualPrice != null ">	and actualPrice = #{actualPrice,jdbcType=NUMERIC }</if>
+            <if test= "cargoPrice != null ">	and cargoPrice = #{cargoPrice,jdbcType=NUMERIC }</if>
+            <if test= "finalPrice != null ">	and finalPrice = #{finalPrice,jdbcType=NUMERIC }</if>
+            <if test= "costTime != null ">	and costTime = #{costTime }</if>
+            <if test= "orderTakingTime != null ">	and orderTakingTime = #{orderTakingTime }</if>
+            <if test= "overTime != null ">	and overTime = #{overTime }</if>
+            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "updateTime != null ">	and updateTime = #{updateTime }</if>
+            <if test= "robPoolTime != null ">	and robPoolTime = #{robPoolTime }</if>
+
+ 	</sql>
+ 	
+ 	<sql id="like-condition">
+            <if test= "batchNum != null ">	and batchNum like "%"#{batchNum}"%"</if>
+            <if test= "batchStatus != null ">	and batchStatus = #{batchStatus,jdbcType=NUMERIC }</if>
+            <if test= "reverseStatus != null ">	and reverseStatus = #{reverseStatus,jdbcType=NUMERIC }</if>
+            <if test= "positiveBatchNum != null ">	and positiveBatchNum like "%"#{positiveBatchNum}"%"</if>
+            <if test= "orderType != null ">	and orderType = #{orderType,jdbcType=NUMERIC }</if>
+            <if test= "driverId != null ">	and driverId = #{driverId,jdbcType=NUMERIC }</if>
+            <if test= "driverName != null ">	and driverName like "%"#{driverName}"%"</if>
+            <if test= "driverPhone != null ">	and driverPhone like "%"#{driverPhone}"%"</if>
+            <if test= "agentNo != null ">	and agentNo like "%"#{agentNo}"%"</if>
+            <if test= "shipperCode != null ">	and shipperCode like "%"#{shipperCode}"%"</if>
+            <if test= "province != null ">	and province like "%"#{province}"%"</if>
+            <if test= "totalVolume != null ">	and totalVolume = #{totalVolume,jdbcType=NUMERIC }</if>
+            <if test= "goodsLength != null ">	and goodsLength = #{goodsLength,jdbcType=NUMERIC }</if>
+            <if test= "goodsWidth != null ">	and goodsWidth = #{goodsWidth,jdbcType=NUMERIC }</if>
+            <if test= "goodsHeight != null ">	and goodsHeight = #{goodsHeight,jdbcType=NUMERIC }</if>
+            <if test= "totalWeight != null ">	and totalWeight = #{totalWeight,jdbcType=NUMERIC }</if>
+            <if test= "totalDist != null ">	and totalDist = #{totalDist,jdbcType=NUMERIC }</if>
+            <if test= "totalBasicsPrice != null ">	and totalBasicsPrice = #{totalBasicsPrice,jdbcType=NUMERIC }</if>
+            <if test= "totalNodePrice != null ">	and totalNodePrice = #{totalNodePrice,jdbcType=NUMERIC }</if>
+            <if test= "actualPrice != null ">	and actualPrice = #{actualPrice,jdbcType=NUMERIC }</if>
+            <if test= "cargoPrice != null ">	and cargoPrice = #{cargoPrice,jdbcType=NUMERIC }</if>
+            <if test= "finalPrice != null ">	and finalPrice = #{finalPrice,jdbcType=NUMERIC }</if>
+            <if test= "costTime != null ">	and costTime = #{costTime }</if>
+            <if test= "orderTakingTime != null ">	and orderTakingTime = #{orderTakingTime }</if>
+            <if test= "overTime != null ">	and overTime = #{overTime }</if>
+            <if test= "createTime != null ">	and createTime = #{createTime }</if>
+            <if test= "updateTime != null ">	and updateTime = #{updateTime }</if>
+            <if test= "robPoolTime != null ">	and robPoolTime = #{robPoolTime }</if>
+
+ 	</sql>
+	
+	<sql id="selectByMapSQL">
+		select
+		<include refid="base_field" />
+		from order_short_batch
+		<choose>
+		    <when test="findBy != null">
+		      	<where>
+					<include refid="other-condition" />
+				</where>
+		    </when>
+		    <when test="findByLike != null">
+		      	<where>
+					<include refid="like-condition" />
+				</where>
+		    </when>
+		</choose>
+		<if test="sortName != null">
+			order by ${sortName} ${sortBy}
+		</if>
+	</sql>
+	
+	<select id="selectByMap" resultMap="result" >
+		<include refid="selectByMapSQL" />
+	</select>
+	
+	<select id="selectCount" resultType="int" >
+		select count(*) from (
+			<include refid="selectByMapSQL" />
+		) AABBCC_
+	</select>
+	
+	<select id="selectPage" resultMap="result" >
+		<include refid="selectByMapSQL" />
+		 limit #{startRow},#{pageSize}
+	</select>
+	
+	<select id="select" resultMap="result" parameterType="java.lang.Integer">
+		select
+		<include refid="base_field" />
+		from order_short_batch  
+		<where>
+			<if test="_parameter != null">
+				id = #{id,jdbcType=INTEGER}
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectByIds" resultMap="result" >
+		select
+		<include refid="base_field" />
+		from order_short_batch  where id in (${_parameter})
+	</select>		
+
+	<insert id="insert" parameterType="com.weilai.appuser.core.model.OrderShortBatch" useGeneratedKeys="true" keyProperty="id">
+		insert into order_short_batch( id,batchNum,batchStatus,reverseStatus,positiveBatchNum,orderType,driverId,driverName,driverPhone,agentNo,shipperCode,province,totalVolume,goodsLength,goodsWidth,goodsHeight,totalWeight,totalDist,totalBasicsPrice,totalNodePrice,actualPrice,cargoPrice,finalPrice,costTime,orderTakingTime,overTime,createTime,updateTime,robPoolTime ) values (#{id,jdbcType=INTEGER},#{batchNum,jdbcType=VARCHAR},#{batchStatus,jdbcType=NUMERIC},#{reverseStatus,jdbcType=NUMERIC},#{positiveBatchNum,jdbcType=VARCHAR},#{orderType,jdbcType=NUMERIC},#{driverId,jdbcType=NUMERIC},#{driverName,jdbcType=VARCHAR},#{driverPhone,jdbcType=VARCHAR},#{agentNo,jdbcType=VARCHAR},#{shipperCode,jdbcType=VARCHAR},#{province,jdbcType=VARCHAR},#{totalVolume,jdbcType=NUMERIC},#{goodsLength,jdbcType=NUMERIC},#{goodsWidth,jdbcType=NUMERIC},#{goodsHeight,jdbcType=NUMERIC},#{totalWeight,jdbcType=NUMERIC},#{totalDist,jdbcType=NUMERIC},#{totalBasicsPrice,jdbcType=NUMERIC},#{totalNodePrice,jdbcType=NUMERIC},#{actualPrice,jdbcType=NUMERIC},#{cargoPrice,jdbcType=NUMERIC},#{finalPrice,jdbcType=NUMERIC},#{costTime},#{orderTakingTime},#{overTime},#{createTime},#{updateTime},#{robPoolTime} )
+	</insert>
+
+	<update id="update" parameterType="com.weilai.appuser.core.model.OrderShortBatch">
+		update order_short_batch set batchNum=#{batchNum,jdbcType=VARCHAR},batchStatus=#{batchStatus,jdbcType=NUMERIC},reverseStatus=#{reverseStatus,jdbcType=NUMERIC},positiveBatchNum=#{positiveBatchNum,jdbcType=VARCHAR},orderType=#{orderType,jdbcType=NUMERIC},driverId=#{driverId,jdbcType=NUMERIC},driverName=#{driverName,jdbcType=VARCHAR},driverPhone=#{driverPhone,jdbcType=VARCHAR},agentNo=#{agentNo,jdbcType=VARCHAR},shipperCode=#{shipperCode,jdbcType=VARCHAR},province=#{province,jdbcType=VARCHAR},totalVolume=#{totalVolume,jdbcType=NUMERIC},goodsLength=#{goodsLength,jdbcType=NUMERIC},goodsWidth=#{goodsWidth,jdbcType=NUMERIC},goodsHeight=#{goodsHeight,jdbcType=NUMERIC},totalWeight=#{totalWeight,jdbcType=NUMERIC},totalDist=#{totalDist,jdbcType=NUMERIC},totalBasicsPrice=#{totalBasicsPrice,jdbcType=NUMERIC},totalNodePrice=#{totalNodePrice,jdbcType=NUMERIC},actualPrice=#{actualPrice,jdbcType=NUMERIC},cargoPrice=#{cargoPrice,jdbcType=NUMERIC},finalPrice=#{finalPrice,jdbcType=NUMERIC},costTime=#{costTime},orderTakingTime=#{orderTakingTime},overTime=#{overTime},updateTime=#{updateTime},robPoolTime=#{robPoolTime} where id=#{id,jdbcType=INTEGER}
+	</update>	
+	
+	<update id="update4Selective" parameterType="com.weilai.appuser.core.model.OrderShortBatch">
+		update order_short_batch
+        <set>
+            <if test="batchNum != null "> 
+                batchNum = #{batchNum,jdbcType=VARCHAR},
+            </if>
+            <if test="batchStatus != null "> 
+                batchStatus = #{batchStatus,jdbcType=NUMERIC},
+            </if>
+            <if test="reverseStatus != null "> 
+                reverseStatus = #{reverseStatus,jdbcType=NUMERIC},
+            </if>
+            <if test="positiveBatchNum != null "> 
+                positiveBatchNum = #{positiveBatchNum,jdbcType=VARCHAR},
+            </if>
+            <if test="orderType != null "> 
+                orderType = #{orderType,jdbcType=NUMERIC},
+            </if>
+            <if test="driverId != null "> 
+                driverId = #{driverId,jdbcType=NUMERIC},
+            </if>
+            <if test="driverName != null "> 
+                driverName = #{driverName,jdbcType=VARCHAR},
+            </if>
+            <if test="driverPhone != null "> 
+                driverPhone = #{driverPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="agentNo != null "> 
+                agentNo = #{agentNo,jdbcType=VARCHAR},
+            </if>
+            <if test="shipperCode != null "> 
+                shipperCode = #{shipperCode,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null "> 
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="totalVolume != null "> 
+                totalVolume = #{totalVolume,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsLength != null "> 
+                goodsLength = #{goodsLength,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsWidth != null "> 
+                goodsWidth = #{goodsWidth,jdbcType=NUMERIC},
+            </if>
+            <if test="goodsHeight != null "> 
+                goodsHeight = #{goodsHeight,jdbcType=NUMERIC},
+            </if>
+            <if test="totalWeight != null "> 
+                totalWeight = #{totalWeight,jdbcType=NUMERIC},
+            </if>
+            <if test="totalDist != null "> 
+                totalDist = #{totalDist,jdbcType=NUMERIC},
+            </if>
+            <if test="totalBasicsPrice != null "> 
+                totalBasicsPrice = #{totalBasicsPrice,jdbcType=NUMERIC},
+            </if>
+            <if test="totalNodePrice != null "> 
+                totalNodePrice = #{totalNodePrice,jdbcType=NUMERIC},
+            </if>
+            <if test="actualPrice != null "> 
+                actualPrice = #{actualPrice,jdbcType=NUMERIC},
+            </if>
+            <if test="cargoPrice != null "> 
+                cargoPrice = #{cargoPrice,jdbcType=NUMERIC},
+            </if>
+            <if test="finalPrice != null "> 
+                finalPrice = #{finalPrice,jdbcType=NUMERIC},
+            </if>
+            <if test="costTime != null "> 
+                costTime = #{costTime},
+            </if>
+            <if test="orderTakingTime != null "> 
+                orderTakingTime = #{orderTakingTime},
+            </if>
+            <if test="overTime != null "> 
+                overTime = #{overTime},
+            </if>
+            <if test="updateTime != null "> 
+                updateTime = #{updateTime},
+            </if>
+            <if test="robPoolTime != null "> 
+                robPoolTime = #{robPoolTime},
+            </if>
+        </set>
+         where id=#{id,jdbcType=INTEGER}
+	</update>	
+
+	<delete id="deleteByPrimaryKey">
+		delete from order_short_batch where id = #{id,jdbcType=INTEGER}
+	</delete>	
+
+	<delete id="delete" parameterType="com.weilai.appuser.core.model.OrderShortBatch">
+		delete from order_short_batch
+		<where>
+			<if test="id != null">
+				id = #{id,jdbcType=INTEGER}
+			</if>
+			<include refid="other-condition" />
+		</where>
+	</delete>	
+		
+</mapper>
+

@@ -121,4 +121,17 @@ public class AppUserServiceImpl extends BaseServiceImpl<AppUser> implements AppU
 		}
 
 	}
+
+	@Override
+	public void userProxy() {
+
+	}
+
+	@Override
+	public void userBatsi() {
+		List a = null;
+		appUserDaoImpl.insertBatch(a);
+		System.out.println("0000");
+	}
+
 }

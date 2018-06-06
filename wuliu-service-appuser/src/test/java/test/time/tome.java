@@ -3,6 +3,8 @@ package test.time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class tome {
 	public static void main(String[] args) {
@@ -17,6 +19,8 @@ public class tome {
 		System.out.println(maxDate);
 		SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.print(dateFormater.format(maxDate));
+
+		Map map = new HashMap();
 
 	}
 }

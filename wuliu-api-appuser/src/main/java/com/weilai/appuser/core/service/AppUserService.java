@@ -11,4 +11,8 @@ public interface AppUserService extends BaseService<AppUser> {
 	public List<AppUser> findAllUser();
 
 	public void shishiTry();
+
+	public void userProxy();
+
+	public void userBatsi();
 }
