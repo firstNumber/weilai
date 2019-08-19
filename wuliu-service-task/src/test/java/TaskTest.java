@@ -1,6 +1,7 @@
 
 import java.util.List;
 
+import com.weilai.task.core.common.ScheduleJob;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.quartz.SchedulerException;
@@ -8,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.weilai.task.common.ScheduleJob;
-import com.weilai.task.core.UserTaskService;
+import com.weilai.task.core.service.UserTaskService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring/application-context.xml" })
@@ -39,7 +39,7 @@ public class TaskTest {
 
 	@Test
 	public void testjob() throws SchedulerException {
-		userTaskService.updateJob();
+		userTaskService.funJob();
 
 	}
 

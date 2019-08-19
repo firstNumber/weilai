@@ -1,5 +1,6 @@
 package com.weilai.task.common;
 
+import com.weilai.task.core.common.ScheduleJob;
 import org.apache.log4j.Logger;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;

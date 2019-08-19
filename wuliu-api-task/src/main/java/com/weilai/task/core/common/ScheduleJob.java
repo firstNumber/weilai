@@ -1,4 +1,4 @@
-package com.weilai.task.common;
+package com.weilai.task.core.common;
 
 import java.io.Serializable;
 
@@ -134,4 +134,18 @@ public class ScheduleJob implements Serializable {
 		this.springBean = springBean;
 	}
 
+	@Override
+	public String toString() {
+		return "ScheduleJob{" +
+				"jobName='" + jobName + '\'' +
+				", jobGroup='" + jobGroup + '\'' +
+				", jobStatus='" + jobStatus + '\'' +
+				", cronExpression='" + cronExpression + '\'' +
+				", description='" + description + '\'' +
+				", beanClass='" + beanClass + '\'' +
+				", isConcurrent='" + isConcurrent + '\'' +
+				", springBean='" + springBean + '\'' +
+				", methodName='" + methodName + '\'' +
+				'}';
+	}
 }

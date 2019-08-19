@@ -3,6 +3,7 @@ package com.weilai.task.common;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import com.weilai.task.core.common.ScheduleJob;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 

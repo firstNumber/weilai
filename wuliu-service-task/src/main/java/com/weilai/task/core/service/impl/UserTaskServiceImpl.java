@@ -1,22 +1,28 @@
-package com.weilai.task.core;
-
-import java.util.List;
-
-import org.quartz.SchedulerException;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+package com.weilai.task.core.service.impl;
 
 import com.weilai.common.util.SpringContextUtil;
 import com.weilai.task.common.QuartzManager;
-import com.weilai.task.common.ScheduleJob;
+import com.weilai.task.core.common.ScheduleJob;
+import com.weilai.task.core.service.UserTaskService;
+import org.quartz.SchedulerException;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+/**
+ * @author liyongzhen
+ * @create 2019-08-19 11:30
+ **/
 @Service("userTaskService")
-public class UserTaskService {
-
-	@Scheduled(fixedRate = 1000 * 60 * 60)
+public class UserTaskServiceImpl implements UserTaskService {
 	public void pushUser() {
 		System.out.println("我是一個Task");
 	};
+
+	@Override
+	public void funJob() throws SchedulerException {
+		updateJob();
+	}
 
 	public String invoke(String serviceName, String mothedName) {
 		try {
@@ -40,7 +46,7 @@ public class UserTaskService {
 		ScheduleJob scheduleJob = new ScheduleJob();
 		scheduleJob.setJobName("pushUserTrigger");
 		scheduleJob.setJobGroup("DEFAULT");
-		scheduleJob.setCronExpression("*/30 * * * * ?");
+		scheduleJob.setCronExpression("*/10 * * * * ?");
 		quartzManager.updateJobCron(scheduleJob);
 	}
 }

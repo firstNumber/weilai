@@ -11,7 +11,7 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Service;
 
 import com.weilai.common.util.SpringContextUtil;
-import com.weilai.task.core.UserTaskService;
+import com.weilai.task.core.service.UserTaskService;
 
 /**
  * @author
